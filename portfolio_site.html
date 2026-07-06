@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Namrata Patil Gurav — Data Scientist, ML &amp; NLP</title>
+<meta name="description" content="Namrata Patil Gurav — Data Scientist working across production ML in banking and enterprise analytics, and reference-free machine translation evaluation research." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F1F4F3;
+    --paper-2:#E9EDE9;
+    --card:#FCFDFC;
+    --ink:#141C1A;
+    --ink-soft:#4B5A55;
+    --ink-faint:#8A968F;
+    --line:#D8DFDA;
+    --line-strong:#BFC9C3;
+    --signal:#AD5A2E;
+    --signal-soft:#F0DDCB;
+    --calib:#1F6F64;
+    --calib-soft:#D9EAE6;
+    --footer-bg:#12201C;
+    --footer-ink:#DCE8E3;
+
+    --display: 'Newsreader', serif;
+    --body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+    --maxw: 1080px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{color:inherit;}
+
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 32px;}
+
+  header.nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(241,244,243,0.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--maxw); margin:0 auto; padding:16px 32px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .nav-mark{
+    display:flex; align-items:center; gap:10px;
+    font-family:var(--mono); font-size:13px; letter-spacing:0.02em;
+    text-decoration:none; color:var(--ink); font-weight:500;
+  }
+  .nav-mark svg{display:block;}
+  .nav-links{display:flex; align-items:center; gap:28px; list-style:none; margin:0; padding:0;}
+  .nav-links a{
+    font-size:13.5px; text-decoration:none; color:var(--ink-soft);
+    font-weight:500; letter-spacing:0.01em;
+    transition:color .15s ease;
+  }
+  .nav-links a:hover{color:var(--signal);}
+  .nav-cta{
+    font-family:var(--mono); font-size:12.5px; font-weight:500;
+    padding:8px 14px; border:1px solid var(--ink); border-radius:3px;
+    text-decoration:none; color:var(--ink);
+    transition:background .15s ease, color .15s ease;
+    white-space:nowrap;
+  }
+  .nav-cta:hover{background:var(--ink); color:var(--paper);}
+
+  @media (max-width:760px){
+    .nav-links{display:none;}
+  }
+
+  section{padding:96px 0;}
+  section.tight{padding:64px 0;}
+  .eyebrow{
+    font-family:var(--mono); font-size:12.5px; letter-spacing:0.12em;
+    text-transform:uppercase; color:var(--signal); font-weight:500;
+    display:flex; align-items:center; gap:10px; margin-bottom:18px;
+  }
+  .eyebrow::before{content:""; width:22px; height:1px; background:var(--signal); display:inline-block;}
+  h2.section-title{
+    font-family:var(--display); font-weight:500; font-size:clamp(28px,3.4vw,38px);
+    margin:0 0 8px 0; color:var(--ink); letter-spacing:-0.01em;
+  }
+  .section-sub{color:var(--ink-soft); font-size:15.5px; max-width:640px; margin:0 0 48px 0;}
+
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  .hero{padding:76px 0 60px 0;}
+  .hero-inner{display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:center;}
+  .hero-eyebrow{
+    font-family:var(--mono); font-size:13px; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--ink-soft); margin-bottom:22px; display:flex; align-items:center; gap:10px;
+  }
+  .hero-dot{width:7px; height:7px; border-radius:50%; background:var(--calib); display:inline-block; position:relative;}
+  .hero-dot::after{
+    content:""; position:absolute; inset:-5px; border-radius:50%; border:1px solid var(--calib);
+    opacity:0.5; animation:pulse 2.4s ease-out infinite;
+  }
+  @keyframes pulse{0%{transform:scale(0.6); opacity:0.6;} 100%{transform:scale(2.1); opacity:0;}}
+
+  h1.hero-name{
+    font-family:var(--display); font-weight:500; font-size:clamp(34px,4.8vw,56px);
+    line-height:1.06; margin:0 0 6px 0; color:var(--ink); letter-spacing:-0.015em;
+  }
+  .hero-role{
+    font-size:clamp(17px,1.8vw,20px); color:var(--ink-soft); margin:0 0 22px 0; font-weight:500;
+  }
+  .hero-tagline{
+    font-size:16.5px; color:var(--ink-soft); max-width:480px; margin:0 0 32px 0;
+  }
+  .hero-tagline b{color:var(--ink); font-weight:600;}
+  .hero-actions{display:flex; gap:12px; flex-wrap:wrap;}
+  .btn{
+    font-family:var(--body); font-size:14px; font-weight:600;
+    padding:12px 20px; border-radius:4px; text-decoration:none;
+    display:inline-flex; align-items:center; gap:8px;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-primary{background:var(--ink); color:var(--paper);}
+  .btn-primary:hover{transform:translateY(-1px); box-shadow:0 6px 16px rgba(20,28,26,0.18);}
+  .btn-ghost{border:1px solid var(--line-strong); color:var(--ink);}
+  .btn-ghost:hover{border-color:var(--ink); transform:translateY(-1px);}
+
+  .calib-card{
+    background:var(--card); border:1px solid var(--line); border-radius:10px;
+    padding:22px 22px 18px 22px; box-shadow:0 1px 2px rgba(20,28,26,0.04);
+  }
+  .calib-label{
+    display:flex; justify-content:space-between; align-items:baseline;
+    font-family:var(--mono); font-size:11.5px; color:var(--ink-faint);
+    margin-bottom:12px; letter-spacing:0.02em;
+  }
+  .calib-label b{color:var(--ink-soft); font-weight:500;}
+  svg.calib{width:100%; height:auto; display:block;}
+  .calib-axis{stroke:var(--line-strong); stroke-width:1;}
+  .calib-diag{stroke:var(--line-strong); stroke-width:1; stroke-dasharray:3 4;}
+  .calib-dot{fill:var(--calib); opacity:0.85;}
+  .calib-dot.off{fill:var(--signal);}
+  .calib-footnote{font-family:var(--mono); font-size:11px; color:var(--ink-faint); margin-top:10px;}
+
+  .stats-strip{
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    padding:30px 0;
+  }
+  .stats-row{display:grid; grid-template-columns:repeat(3,1fr);}
+  .stat{
+    padding:0 24px; border-left:1px solid var(--line);
+  }
+  .stat:first-child{border-left:none; padding-left:0;}
+  .stat-num{font-family:var(--mono); font-size:clamp(24px,2.8vw,32px); font-weight:500; color:var(--ink); display:block;}
+  .stat-label{font-size:13px; color:var(--ink-soft); margin-top:4px;}
+
+  @media (max-width:700px){
+    .hero-inner{grid-template-columns:1fr;}
+    .stats-row{grid-template-columns:1fr; gap:20px;}
+    .stat{border-left:none; padding-left:0; border-top:1px solid var(--line); padding-top:16px;}
+    .stat:first-child{border-top:none; padding-top:0;}
+  }
+
+  .about-grid{display:grid; grid-template-columns:0.8fr 1.2fr; gap:56px; align-items:start;}
+  .avatar-block{display:flex; flex-direction:column; align-items:flex-start; gap:16px;}
+  .avatar{
+    width:132px; height:132px; border-radius:50%;
+    background:var(--calib-soft); border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--display); font-size:38px; color:var(--calib); font-weight:500;
+    position:relative;
+  }
+  .avatar::after{
+    content:""; position:absolute; inset:-8px; border-radius:50%;
+    border:1px dashed var(--line-strong);
+  }
+  .avatar-meta{font-family:var(--mono); font-size:12.5px; color:var(--ink-faint); line-height:1.7;}
+  .avatar-meta b{color:var(--ink-soft); font-weight:500;}
+  .about-text p{color:var(--ink-soft); font-size:16px; margin:0 0 18px 0;}
+  .about-text p:last-child{margin-bottom:0;}
+  .about-text b{color:var(--ink); font-weight:600;}
+
+  @media (max-width:760px){
+    .about-grid{grid-template-columns:1fr;}
+  }
+
+  .skill-groups{display:grid; grid-template-columns:repeat(2,1fr); gap:28px 40px;}
+  .skill-group{border-top:1px solid var(--line); padding-top:16px;}
+  .skill-group h3{
+    font-family:var(--mono); font-size:12.5px; text-transform:uppercase; letter-spacing:0.08em;
+    color:var(--signal); font-weight:500; margin:0 0 12px 0;
+  }
+  .chip-row{display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{
+    font-size:13.5px; padding:6px 12px; border-radius:20px;
+    background:var(--card); border:1px solid var(--line); color:var(--ink-soft);
+  }
+  @media (max-width:700px){ .skill-groups{grid-template-columns:1fr;} }
+
+  .timeline{position:relative; padding-left:28px; border-left:1px solid var(--line);}
+  .tl-item{position:relative; padding-bottom:48px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-dot{
+    position:absolute; left:-33px; top:4px; width:9px; height:9px; border-radius:50%;
+    background:var(--paper); border:2px solid var(--calib);
+  }
+  .tl-head{display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap; margin-bottom:4px;}
+  .tl-role{font-family:var(--display); font-size:21px; font-weight:500; color:var(--ink);}
+  .tl-date{font-family:var(--mono); font-size:12.5px; color:var(--ink-faint); white-space:nowrap;}
+  .tl-org{font-size:14.5px; color:var(--signal); font-weight:600; margin-bottom:12px;}
+  .tl-org span{color:var(--ink-faint); font-weight:400; font-family:var(--mono); font-size:12.5px; margin-left:8px;}
+  .tl-bullets{margin:0; padding:0; list-style:none;}
+  .tl-bullets li{
+    position:relative; padding-left:16px; color:var(--ink-soft); font-size:14.5px; margin-bottom:8px;
+  }
+  .tl-bullets li::before{content:"–"; position:absolute; left:0; color:var(--ink-faint);}
+  .tl-bullets li:last-child{margin-bottom:0;}
+
+  .project-card{
+    background:var(--card); border:1px solid var(--line); border-radius:12px;
+    padding:44px; box-shadow:0 1px 3px rgba(20,28,26,0.05);
+  }
+  .project-top{display:flex; justify-content:space-between; align-items:flex-start; gap:24px; flex-wrap:wrap; margin-bottom:8px;}
+  .project-badge{
+    font-family:var(--mono); font-size:11.5px; text-transform:uppercase; letter-spacing:0.08em;
+    color:var(--calib); background:var(--calib-soft); padding:5px 10px; border-radius:3px; font-weight:500;
+    white-space:nowrap;
+  }
+  h3.project-title{font-family:var(--display); font-size:24px; font-weight:500; margin:6px 0 14px 0; color:var(--ink);}
+  .project-desc{color:var(--ink-soft); font-size:15.5px; max-width:680px; margin:0 0 28px 0;}
+  .project-metrics{display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin-bottom:28px;}
+  .pm{border-left:1px solid var(--line); padding-left:14px;}
+  .pm-num{font-family:var(--mono); font-size:18px; color:var(--ink); font-weight:500; display:block;}
+  .pm-label{font-size:12px; color:var(--ink-faint); margin-top:2px; line-height:1.4;}
+  .project-tools{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:22px;}
+  .tool-chip{
+    font-family:var(--mono); font-size:12px; padding:5px 10px; border-radius:3px;
+    background:var(--paper-2); color:var(--ink-soft); border:1px solid var(--line);
+  }
+  .project-footline{font-size:13.5px; color:var(--ink-faint); border-top:1px solid var(--line); padding-top:18px;}
+
+  @media (max-width:700px){ .project-metrics{grid-template-columns:repeat(2,1fr);} .project-card{padding:28px;} }
+
+  .writing-item{
+    display:flex; justify-content:space-between; align-items:center; gap:20px;
+    padding:22px 0; border-top:1px solid var(--line); flex-wrap:wrap;
+  }
+  .writing-item:last-child{border-bottom:1px solid var(--line);}
+  .writing-main{flex:1; min-width:240px;}
+  .writing-title{font-family:var(--display); font-size:19px; color:var(--ink); font-weight:500; margin-bottom:6px;}
+  .writing-venue{font-size:13.5px; color:var(--ink-soft);}
+  .writing-tag{
+    font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:0.06em;
+    color:var(--signal); border:1px solid var(--signal-soft); background:var(--signal-soft);
+    padding:5px 10px; border-radius:3px; white-space:nowrap;
+  }
+
+  .edu-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .edu-card{border-top:1px solid var(--line); padding-top:16px;}
+  .edu-degree{font-family:var(--display); font-size:18px; color:var(--ink); margin-bottom:4px; font-weight:500;}
+  .edu-school{font-size:14px; color:var(--signal); font-weight:600; margin-bottom:4px;}
+  .edu-date{font-family:var(--mono); font-size:12px; color:var(--ink-faint);}
+  .cert-list{margin-top:36px; border-top:1px solid var(--line); padding-top:24px;}
+  .cert-list h3{
+    font-family:var(--mono); font-size:12.5px; text-transform:uppercase; letter-spacing:0.08em;
+    color:var(--signal); font-weight:500; margin:0 0 14px 0;
+  }
+  .cert-row{display:flex; flex-wrap:wrap; gap:10px;}
+  .cert-chip{font-size:13px; padding:6px 12px; border-radius:4px; background:var(--card); border:1px solid var(--line); color:var(--ink-soft);}
+
+  @media (max-width:760px){ .edu-grid{grid-template-columns:1fr;} }
+
+  footer{background:var(--footer-bg); color:var(--footer-ink); padding:88px 0 40px 0;}
+  .footer-inner{max-width:var(--maxw); margin:0 auto; padding:0 32px;}
+  .footer-eyebrow{font-family:var(--mono); font-size:12.5px; letter-spacing:0.12em; text-transform:uppercase; color:#7FA89C; margin-bottom:18px;}
+  h2.footer-title{font-family:var(--display); font-size:clamp(30px,4vw,44px); font-weight:500; margin:0 0 20px 0; color:#fff; max-width:600px;}
+  .footer-sub{color:#A9BDB6; max-width:520px; margin-bottom:36px; font-size:15.5px;}
+  .footer-actions{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:64px;}
+  .footer-btn{
+    font-family:var(--body); font-weight:600; font-size:14.5px; padding:13px 22px; border-radius:4px;
+    text-decoration:none; display:inline-flex; align-items:center; gap:8px;
+  }
+  .footer-btn.primary{background:#fff; color:var(--footer-bg);}
+  .footer-btn.primary:hover{background:#DCE8E3;}
+  .footer-btn.ghost{border:1px solid #3A4E48; color:#DCE8E3;}
+  .footer-btn.ghost:hover{border-color:#7FA89C;}
+  .footer-bottom{
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
+    border-top:1px solid #23342E; padding-top:24px;
+    font-family:var(--mono); font-size:12px; color:#6E8A81;
+  }
+
+  ::selection{background:var(--calib-soft); color:var(--ink);}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-mark">
+      <svg width="18" height="18" viewBox="0 0 18 18"><line x1="1" y1="17" x2="17" y2="1" stroke="#BFC9C3" stroke-width="1" stroke-dasharray="2 2"/><circle cx="13" cy="5" r="3" fill="#1F6F64"/></svg>
+      N. PATIL GURAV
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#project">Project</a></li>
+      <li><a href="#writing">Writing</a></li>
+      <li><a href="#education">Education</a></li>
+    </ul>
+    <a href="mailto:namratapatil6810@gmail.com" class="nav-cta">Email me</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <div class="hero-eyebrow"><span class="hero-dot"></span> DATA SCIENTIST · MACHINE LEARNING &amp; NLP · LONDON, UK</div>
+        <h1 class="hero-name">Namrata Patil Gurav</h1>
+        <p class="hero-role">Driving insights with ML &amp; analytics</p>
+        <p class="hero-tagline">3+ years building and deploying production ML — from <b>credit risk pipelines</b> at DBS Bank and <b>enterprise audit analytics</b> at General Mills, to <b>reference-free translation quality models</b> published as first-author research at the University of Surrey.</p>
+        <div class="hero-actions">
+          <a href="#project" class="btn btn-primary">See the research →</a>
+          <a href="#experience" class="btn btn-ghost">View experience</a>
+        </div>
+      </div>
+      <div class="calib-card reveal" id="calib-card">
+        <div class="calib-label"><span>PREDICTED SCORE vs. HUMAN SCORE</span><b>r = 0.94</b></div>
+        <svg class="calib" viewBox="0 0 300 220" id="calib-svg">
+          <line class="calib-axis" x1="30" y1="10" x2="30" y2="190"/>
+          <line class="calib-axis" x1="30" y1="190" x2="290" y2="190"/>
+          <line class="calib-diag" x1="30" y1="190" x2="280" y2="20"/>
+        </svg>
+        <div class="calib-footnote">EN → GUJARATI · GENERAL DOMAIN · GEMINI-2.5-PRO, FEW-SHOT</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats-strip">
+    <div class="wrap stats-row">
+      <div class="stat"><span class="stat-num">65,200</span><span class="stat-label">human-scored translation pairs across train/val/test splits</span></div>
+      <div class="stat"><span class="stat-num">5</span><span class="stat-label">Indic languages: Hindi, Marathi, Tamil, Telugu, Gujarati</span></div>
+      <div class="stat"><span class="stat-num">0.94</span><span class="stat-label">peak Pearson r vs. human judgment (Gemini-2.5-Pro, General domain)</span></div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap about-grid">
+      <div class="avatar-block reveal">
+        <div class="avatar">NPG</div>
+        <div class="avatar-meta">
+          <b>Based in</b> London, UK<br/>
+          <b>Open to</b> Data Science / ML / NLP roles<br/>
+          <b>Email</b> namratapatil6810@gmail.com
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="eyebrow">About</div>
+        <h2 class="section-title">Where production ML meets language models</h2>
+        <div class="about-text">
+          <p>I'm a Data Scientist with 3+ years of experience building and deploying production-ready machine learning models, designing scalable data pipelines, and applying statistical methods to solve analytical problems across <b>DBS Bank</b>, <b>General Mills</b>, and the <b>University of Surrey</b>.</p>
+          <p>I work at the intersection of data engineering, predictive modelling, and large language models — turning complex datasets into decisions that hold up under scrutiny, whether that's a risk model, an audit finding, or a quality-estimation score for a translation system.</p>
+          <p>At DBS Bank, I built and deployed production ML models across 10M+ banking records, designing PySpark/Databricks pipelines with MLflow-based experiment tracking for credit risk monitoring. At General Mills, I built predictive models and ETL pipelines on BigQuery to support global internal audit analytics. Most recently, at Surrey, I built transformer-based evaluation pipelines (LoRA/QLoRA fine-tuning) for low-resource machine translation, which led to a first-author publication accepted at EACL 2026.</p>
+          <p>I take ownership of problems end-to-end — structuring ambiguous requirements, collaborating with cross-functional stakeholders, and delivering solutions that are technically sound and business relevant.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="tight">
+    <div class="wrap">
+      <div class="eyebrow reveal">Technical Expertise</div>
+      <h2 class="section-title reveal">Tools I reach for</h2>
+      <p class="section-sub reveal">Grounded in production ML and data engineering, sharpened by graduate research in NLP and evaluation.</p>
+      <div class="skill-groups reveal">
+        <div class="skill-group">
+          <h3>Data Science &amp; ML</h3>
+          <div class="chip-row">
+            <span class="chip">Python</span><span class="chip">Machine Learning</span><span class="chip">NLP</span>
+            <span class="chip">Transformer Models</span><span class="chip">Predictive Modelling</span>
+            <span class="chip">Statistical Modelling</span><span class="chip">Feature Engineering</span>
+            <span class="chip">LoRA / QLoRA</span><span class="chip">Hugging Face</span><span class="chip">PyTorch</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>MLOps &amp; Pipelines</h3>
+          <div class="chip-row">
+            <span class="chip">MLflow</span><span class="chip">Experiment Tracking</span><span class="chip">Model Versioning</span>
+            <span class="chip">Model Deployment</span><span class="chip">Model Evaluation</span><span class="chip">Data / ETL Pipelines</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Data Engineering &amp; Platforms</h3>
+          <div class="chip-row">
+            <span class="chip">SQL</span><span class="chip">PySpark</span><span class="chip">Apache Spark</span>
+            <span class="chip">Databricks</span><span class="chip">BigQuery</span><span class="chip">Azure</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Analytics &amp; Collaboration</h3>
+          <div class="chip-row">
+            <span class="chip">Financial Analytics</span><span class="chip">Risk Analytics</span>
+            <span class="chip">Tableau</span><span class="chip">Power BI</span>
+            <span class="chip">Cross-functional Collaboration</span><span class="chip">Stakeholder Management</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="eyebrow reveal">Experience</div>
+      <h2 class="section-title reveal">A career shaped by ambiguous, high-stakes data</h2>
+      <p class="section-sub reveal">Most recent first.</p>
+
+      <div class="timeline reveal">
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-head"><span class="tl-role">Data Scientist — Applied Machine Learning Research</span><span class="tl-date">May 2025 – Jan 2026 · 9 mos</span></div>
+          <div class="tl-org">University of Surrey <span>Guildford, UK</span></div>
+          <ul class="tl-bullets">
+            <li>Built and deployed transformer-based ML models using Python, PyTorch, Hugging Face, LoRA and QLoRA, improving benchmarking efficiency by 35% across a 65K+ multilingual dataset.</li>
+            <li>Designed training, inference and data pipelines using Python, SQL, MLflow and PyTorch, improving model evaluation reliability by 31% through experiment tracking and model versioning.</li>
+            <li>Applied statistical methods to evaluate NLP models using Python, Hugging Face and SQL, reducing manual experimentation by 40% through automated validation workflows.</li>
+            <li>Collaborated with research stakeholders to solve complex NLP problems and communicate analytical findings, resulting in a first-author publication accepted at EACL 2026.</li>
+          </ul>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-head"><span class="tl-role">Data Scientist — Intelligent Analytics Systems</span><span class="tl-date">Dec 2023 – Aug 2024 · 9 mos</span></div>
+          <div class="tl-org">DBS Bank <span>Mumbai, India</span></div>
+          <ul class="tl-bullets">
+            <li>Built and deployed production machine learning models using Python, PySpark, Databricks and Azure, improving analytical scalability by 40% across 10M+ banking records.</li>
+            <li>Designed production-ready data pipelines using PySpark, SQL, Databricks and MLflow, improving monitoring accuracy by 27% through automated experiment tracking and model versioning.</li>
+            <li>Applied statistical modelling and feature engineering using Python, Apache Spark and Databricks, reducing reporting turnaround by 32% while improving model reliability.</li>
+            <li>Collaborated with Risk, Product and Engineering teams to solve financial analytics problems and communicate data-driven insights, improving operational decision-making by 25%.</li>
+          </ul>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-head"><span class="tl-role">Data Scientist — Enterprise Analytics</span><span class="tl-date">Sep 2022 – Nov 2023 · 1 yr 3 mos</span></div>
+          <div class="tl-org">General Mills <span>Mumbai, India</span></div>
+          <ul class="tl-bullets">
+            <li>Built and deployed predictive machine learning models using Python, SQL and BigQuery, improving reporting efficiency by 30% across enterprise analytics.</li>
+            <li>Designed production-ready data pipelines using SQL, BigQuery and ETL Pipelines, improving analytical accuracy by 25% through scalable data processing and validation.</li>
+            <li>Applied statistical modelling and feature engineering using Python, BigQuery, Power BI and Tableau, reducing manual reporting effort by 40% while improving business insight generation.</li>
+            <li>Collaborated with Audit, Finance and Engineering teams to solve complex analytical problems and communicate data-driven insights, improving enterprise decision-making and operational efficiency.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="project" class="tight">
+    <div class="wrap">
+      <div class="eyebrow reveal">Featured Research</div>
+      <h2 class="section-title reveal">Quality Estimation for Domain-Specific Machine Translation</h2>
+      <p class="section-sub reveal">A reference-free system for catching risky translations before they ship — first-author research at the University of Surrey.</p>
+
+      <div class="project-card reveal">
+        <div class="project-top">
+          <div>
+            <span class="project-badge">First author · LoResLM Workshop, EACL 2026</span>
+            <h3 class="project-title">Domain-Specific Quality Estimation for Machine Translation in Low-Resource Scenarios</h3>
+          </div>
+        </div>
+        <p class="project-desc">Built a two-track evaluation system for English→Indic machine translation across Healthcare, Legal, Tourism, and General content. Benchmarked closed-weight (Gemini) and open-weight (Llama, Qwen, Gemma) models under zero-shot, few-shot, and guideline-anchored prompting — then designed a lightweight adapter (LoRA/LoRMA + intermediate-layer regression head, following the ALOPE framework) that rescued the domain/language pairs where prompting alone fell short.</p>
+
+        <div class="project-metrics">
+          <div class="pm"><span class="pm-num">65,200</span><span class="pm-label">sentence pairs, human-scored (train+val+test)</span></div>
+          <div class="pm"><span class="pm-num">4</span><span class="pm-label">domains: Healthcare, Legal, Tourism, General</span></div>
+          <div class="pm"><span class="pm-num">0.94</span><span class="pm-label">peak Pearson r — Gemini-2.5-Pro, General, En→Gujarati, few-shot</span></div>
+          <div class="pm"><span class="pm-num">−0.23 → 0.52</span><span class="pm-label">Spearman's ρ, Healthcare En→Hindi (Llama-3.2-3B): zero-shot vs. ALOPE</span></div>
+        </div>
+
+        <div class="project-tools">
+          <span class="tool-chip">Python</span><span class="tool-chip">Hugging Face</span><span class="tool-chip">PyTorch</span>
+          <span class="tool-chip">LoRA / QLoRA</span><span class="tool-chip">Gemini API</span><span class="tool-chip">Llama · Qwen · Gemma</span>
+          <span class="tool-chip">Pearson &amp; Spearman correlation</span>
+        </div>
+
+        <div class="project-footline">Outcome: first-author paper accepted at the LoResLM Workshop, EACL 2026 (with A. Ranu, A. Sindhujan, D. Kanojia), establishing a reproducible benchmark for domain-aware, reference-free QE across five Indic languages.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="writing" class="tight">
+    <div class="wrap">
+      <div class="eyebrow reveal">Writing</div>
+      <h2 class="section-title reveal">Published research</h2>
+      <div class="reveal">
+        <div class="writing-item">
+          <div class="writing-main">
+            <div class="writing-title">Domain-Specific Quality Estimation for Machine Translation in Low-Resource Scenarios</div>
+            <div class="writing-venue">LoResLM Workshop, EACL 2026 · First author, with A. Ranu, A. Sindhujan, D. Kanojia</div>
+          </div>
+          <span class="writing-tag">Paper</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap">
+      <div class="eyebrow reveal">Education</div>
+      <h2 class="section-title reveal">Academic foundation</h2>
+
+      <div class="edu-grid reveal">
+        <div class="edu-card">
+          <div class="edu-degree">MSc, Data Science</div>
+          <div class="edu-school">University of Surrey</div>
+          <div class="edu-date">2024 – 2025</div>
+        </div>
+        <div class="edu-card">
+          <div class="edu-degree">BSc, Mathematics</div>
+          <div class="edu-school">University of Mumbai</div>
+          <div class="edu-date">2017 – 2020</div>
+        </div>
+        <div class="edu-card">
+          <div class="edu-degree">Diploma, Community-Based Participatory Research &amp; Advocacy</div>
+          <div class="edu-school">Tata Institute of Social Sciences</div>
+          <div class="edu-date">2019 – 2020</div>
+        </div>
+      </div>
+
+      <div class="cert-list reveal">
+        <h3>Certifications</h3>
+        <div class="cert-row">
+          <span class="cert-chip">AI/ML for Geodata Analysis</span>
+          <span class="cert-chip">Alteryx Designer Core</span>
+          <span class="cert-chip">Introduction to Machine Learning</span>
+          <span class="cert-chip">Telling Stories with Data</span>
+          <span class="cert-chip">Accessing &amp; Analysing Air Quality Data from Geostationary Satellites</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <div class="footer-inner">
+    <div class="footer-eyebrow">Get in touch</div>
+    <h2 class="footer-title">Let's talk data, models, or the space between them.</h2>
+    <p class="footer-sub">Open to Data Science, ML Engineering, and NLP roles in London and remote-friendly teams.</p>
+    <div class="footer-actions">
+      <a href="mailto:namratapatil6810@gmail.com" class="footer-btn primary">namratapatil6810@gmail.com</a>
+      <a href="https://www.linkedin.com/in/namratapatil2399" target="_blank" rel="noopener" class="footer-btn ghost">LinkedIn ↗</a>
+    </div>
+    <div class="footer-bottom">
+      <span>NAMRATA PATIL GURAV — LONDON, UK</span>
+      <span id="year-mark">© 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  }, {threshold:0.12});
+  revealEls.forEach(el=>io.observe(el));
+
+  (function(){
+    const svg = document.getElementById('calib-svg');
+    const points = [
+      [55,150],[80,120],[100,150,1],[120,95],[150,80],[160,60],
+      [180,55],[195,40],[210,100,1],[225,35],[245,28],[260,22]
+    ];
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    points.forEach(([x,y,off], i)=>{
+      const c = document.createElementNS('http://www.w3.org/2000/svg','circle');
+      c.setAttribute('cx', x);
+      c.setAttribute('cy', y);
+      c.setAttribute('r', 4.5);
+      c.setAttribute('class', 'calib-dot' + (off ? ' off' : ''));
+      if(!reduceMotion){
+        c.style.opacity = '0';
+        c.style.transform = `translate(${(Math.random()-0.5)*60}px, ${(Math.random()-0.5)*40}px)`;
+        c.style.transition = `opacity .5s ease ${i*70}ms, transform .6s cubic-bezier(.2,.7,.3,1) ${i*70}ms`;
+      }
+      svg.appendChild(c);
+    });
+    requestAnimationFrame(()=>{
+      setTimeout(()=>{
+        svg.querySelectorAll('circle').forEach(c=>{
+          c.style.opacity = c.classList.contains('off') ? '0.85' : '0.85';
+          c.style.transform = 'translate(0,0)';
+        });
+      }, 200);
+    });
+  })();
+
+  document.getElementById('year-mark').textContent = '© ' + new Date().getFullYear();
+</script>
+
+</body>
+</html>
